@@ -380,8 +380,7 @@ export default class extends Component {
     const previousOffset = horizontal ? offset.x : offset.y
     const newOffset = horizontal ? contentOffset.x : contentOffset.y
 
-    if (previousOffset === newOffset &&
-      (index === 0 || index === children.length - 1)) {
+    if (previousOffset === newOffset) { // fixes bug when prev and new are the same and not on 1st or last pager
       this.internals.isScrolling = false
     }
   }
